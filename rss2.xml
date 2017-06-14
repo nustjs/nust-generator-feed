@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ title }}</title>
+    <link>{{ urlRoot | uriencode }}</link>
+    <atom:link href="{{ url | uriencode }}" rel="self" type="application/rss+xml"/>
+    {% if hub %}<atom:link href="{{ hub | uriencode }}" rel="hub"/>{% endif %}
+    <description>{{ desc }}</description>
+    <pubDate>{{ lastUpdated }}</pubDate>
+    <generator>https://nustjs.com/</generator>
+    {% for post in posts %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>{{ (urlRoot + post.route) | uriencode }}</link>
+      <guid>{{ (urlRoot + post.route) | uriencode }}</guid>
+      <pubDate>{{ post.dateISO }}</pubDate>
+      <description>
+      {% if post.desc %}
+        {{ post.desc }}
+      {% elif post.excerpt %}
+        {{ post.excerpt }}
+      {% elif post.body %}
+        {{ post.body.substring(0, 140) }}
+      {% endif %}
+      </description>
+      {% if show_content and post.body %}
+      <content:encoded><![CDATA[{{ post.body | safe }}]]></content:encoded>
+      {% endif %}
+      {% if post.comments %}<comments>{{ (urlRoot + post.route) | uriencode }}#comments</comments>{% endif %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

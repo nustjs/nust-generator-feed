@@ -1,0 +1,28 @@
+# dependencies
+node_modules
+
+# logs
+*.log
+
+# Nuxt build
+.nuxt
+
+.DS_Store
+
+*.lock
+
+mac-cli
+
+# Dist folder
+dist
+
+# dist example generation
+example/**/dist
+
+# Coverage support
+coverage
+*.lcov
+.nyc_output
+
+# example
+example

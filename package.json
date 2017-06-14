@@ -1,0 +1,38 @@
+{
+  "name": "nust-generator-fuse",
+  "version": "1.0.0",
+  "description": "Generator for implementing fuzzy-search via fusejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nustjs/nust-generator-fuse.git"
+  },
+  "keywords": [
+    "nust",
+    "nustjs",
+    "nust-generator-fuse",
+    "fusejs",
+    "fuse.js"
+  ],
+  "author": "mamboer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nustjs/nust-generator-fuse/issues"
+  },
+  "homepage": "https://github.com/nustjs/nust-generator-fuse#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "nunjucks": "^3.0.1"
+  }
+}
