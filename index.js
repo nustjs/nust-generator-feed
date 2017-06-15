@@ -19,6 +19,7 @@ const tpls = {
  */
 module.exports = function (data) {
   let feedConfigs = data.appConfigs.feed
+  if (feedConfigs === false) return false
   let postData = data.data.posts0
   let ret = []
   Object.keys(feedConfigs).forEach(key => {

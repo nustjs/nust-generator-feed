@@ -1,28 +1,28 @@
 {
-  "name": "nust-generator-fuse",
+  "name": "nust-generator-feed",
   "version": "1.0.0",
-  "description": "Generator for implementing fuzzy-search via fusejs",
+  "description": "Atom 1.0 or RSS 2.0 feed generator for Nust",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/nustjs/nust-generator-fuse.git"
+    "url": "git+ssh://git@github.com/nustjs/nust-generator-feed.git"
   },
   "keywords": [
     "nust",
     "nustjs",
-    "nust-generator-fuse",
+    "nust-generator-feed",
     "fusejs",
     "fuse.js"
   ],
   "author": "mamboer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nustjs/nust-generator-fuse/issues"
+    "url": "https://github.com/nustjs/nust-generator-feed/issues"
   },
-  "homepage": "https://github.com/nustjs/nust-generator-fuse#readme",
+  "homepage": "https://github.com/nustjs/nust-generator-feed#readme",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0",
