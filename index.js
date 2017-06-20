@@ -28,7 +28,7 @@ module.exports = function (data) {
     let type = configs.type || 'atom'
     let tpl = tpls[type] || tpls['atom']
     let posts = postData[key]
-    if ((!posts || posts.length === 0) && configs.default_posts) {
+    if ((!posts || posts.length === 0) && configs.use_default_posts) {
       posts = postData[data.appConfigs.lang] || []
     }
 
