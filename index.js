@@ -40,7 +40,7 @@ module.exports = function (data) {
 
     configs.posts = posts
     configs.lastUpdated = posts[0] ? posts[0].updatedISO : new Date().toISOString()
-    configs.urlRoot = data.urlRoot
+    configs.urlRoot = data.appConfigs.url
     configs.author = data.appAuthor
     if (typeof configs.author === 'string') {
       configs.author = {

@@ -17,8 +17,8 @@
   {% for post in posts %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="{{ (urlRoot + post.route) | uriencode }}"/>
-    <id>{{ urlRoot + post.route }}</id>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink }}</id>
     <published>{{ post.dateISO }}</published>
     <updated>{{ post.updatedISO }}</updated>
     {% if show_content and post.body %}
@@ -34,10 +34,10 @@
     {% endif %}
     </summary>
     {% if post.cate %}
-      <category term="{{ post.cate.title }}" scheme="{{ (urlRoot + post.cate.route) | uriencode }}"/>
+      <category term="{{ post.cate.title }}" scheme="{{ post.cate.permalink | uriencode }}"/>
     {% endif %}
     {% for tag in post.tags %}
-      <category term="{{ tag.title }}" scheme="{{ (urlRoot + tag.route) | uriencode }}"/>
+      <category term="{{ tag.title }}" scheme="{{ tag.permalink | uriencode }}"/>
     {% endfor %}
   </entry>
   {% endfor %}

@@ -13,8 +13,8 @@
     {% for post in posts %}
     <item>
       <title>{{ post.title }}</title>
-      <link>{{ (urlRoot + post.route) | uriencode }}</link>
-      <guid>{{ (urlRoot + post.route) | uriencode }}</guid>
+      <link>{{ post.permalink | uriencode }}</link>
+      <guid>{{ post.permalink | uriencode }}</guid>
       <pubDate>{{ post.dateISO }}</pubDate>
       <description>
       {% if post.desc %}
@@ -28,7 +28,7 @@
       {% if show_content and post.body %}
       <content:encoded><![CDATA[{{ post.body | safe }}]]></content:encoded>
       {% endif %}
-      {% if post.comments %}<comments>{{ (urlRoot + post.route) | uriencode }}#comments</comments>{% endif %}
+      {% if post.comments %}<comments>{{ post.permalink | uriencode }}#comments</comments>{% endif %}
     </item>
     {% endfor %}
   </channel>
