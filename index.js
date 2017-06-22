@@ -2,6 +2,7 @@ const nunjucks = require('nunjucks')
 const env = new nunjucks.Environment()
 const pathFn = require('path')
 const fs = require('fs')
+const {URL} = require('url')
 
 env.addFilter('uriencode', (str) => {
   return encodeURI(str)
@@ -50,10 +51,10 @@ module.exports = function (data) {
     let targetFile
     if (isDefault) {
       targetFile = pathFn.join(this.dirTheme, `static/${type}.xml`)
-      configs.url = `${configs.urlRoot}${type}.xml`
+      configs.url = new URL(`${type}.xml`, configs.urlRoot).toString()
     } else {
       targetFile = pathFn.join(this.dirTheme, `static/${type}-${key}.xml`)
-      configs.url = `${configs.urlRoot}${type}-${key}.xml`
+      configs.url = new URL(`${type}-${key}.xml`, configs.urlRoot).toString()
     }
 
     ret.push({
